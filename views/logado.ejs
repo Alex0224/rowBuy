@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs'); %>
+<%- include('partials/nav.ejs'); %>
+    <div class="centro">
+        <a class="btnCadastrarProdutos" href="/cadastrarProdutos">Cadastre um produto</a>
+    </div>
+
+<main>
+    <section>
+        <% produtos.forEach(produto => { %>
+        <div class="conjuntoProdutos">
+                <div class="cardProduto">
+                <div class="cardHeader">
+                    <img src="<%= produto.imagem %> " alt=""> 
+                </div>
+                <div class="bodyCard">
+                    <h3><%= produto.nome %> </h3>
+                    <div class="areaEdit">
+                        <p class="textPromotion">De: R$ <%= produto.preco %></p>
+                        <p class="textPromotion02">Por: R$ <%= produto.promocao %></p>
+                    </div>
+                    <p class="descricaoProdutoCard">Descrição: <%= produto.descricao %> </p>
+                    <h4>Contato com o vendedor:</h4>
+                    <p class="nomeVendedorCard">Nome do vendedor: <%= produto.nomeVendedor %> </p>
+                    <p class="contatoVendedorCard">Contato: <%= produto.contatoVendedor %> </p>
+                    <div class="areaEdit">
+                            <a href="/atualizarProduto/<%= produto.id %>"><button class="btnEdit pencil"><img src="/img/pencil.png" alt=""></button></a>
+                        <form action="/produto/excluir" method="post" onsubmit="confirmarExclusao(event, this)">
+                            <input type="hidden" name="inputIDProduto" value="<%= produto.id %> ">
+                            <button type="submit" class="btnEdit trash"><img src="/img/trash.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </section>
+</main>
+
+<script>
+    function confirmarExclusao(event, form){
+        let decision = confirm('Você tem certeza que deseja deletar esse produto?')
+        if(decision){
+            form.submit()
+        }else{
+            event.preventDefault();
+        }
+    }
+</script>
+<%- include('partials/footer.ejs'); %>

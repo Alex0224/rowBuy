@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs'); %>
+<%- include('partials/nav.ejs'); %>
+<main class="container-geral">
+    <div class="container-cadastro">
+        <h3>Novo por aqui?</h3>
+        <p>Cadastre-se e tenha a oportunidade de comprar e vender sem sair de casa.</p>
+        <a class="btnCadastrar" href="/cadastrarOne">Criar Conta</a>
+    </div>
+    <div class="linhaVertical">
+    </div>
+    <div class="container-login">
+        <h3>Faça Login</h3>
+        <form class="container-form-login" method="post" action="/realizarLogin">
+            <label for="inputEmail">Email:<input type="email" class="inputs alinhadoCentro" name="inputEmail" id="inputEmail" placeholder="Insira seu Email" required></label>
+            <label for="inputSenha">Senha:<input type="password" class="inputs alinhadoCentro" name="inputSenha" id="inputSenha" placeholder="Insira sua Senha" required></label>
+            <button type="submit" class="btn-login">Login</button>
+            <a class="esqueciASenha" href="#">Esqueci minha Senha</a>
+            <hr/>
+            <h4>Ou faça login por:</h4>
+            <div class="login-out">
+                <a href="#" class="loginFacebook"><img class="iconsLogin" src="/img/facebook.png" alt="Faça login pelo Facebook"></a>
+                <a href="#"><img class="iconsLogin" src="/img/google.png" alt="Faça login pelo Google"></a>
+            </div>
+        </form>
+    </div>
+</main>
+<%- include('partials/footer.ejs'); %>

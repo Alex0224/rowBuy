@@ -1,0 +1,1 @@
+Para utilizar o projeto é necessário instalar o node.js, e após isso, configurar o arquivo dentro da pasta db, o arquivo db.js, após o parâmetro 'root', colocar sua senha do banco de dados e criar o database em sua máquina. 

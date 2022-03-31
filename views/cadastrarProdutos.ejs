@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs'); %>
+<%- include('partials/nav.ejs'); %>
+<div class="container-cadastro-produtos">
+    <form method="post" class="container-form" action="/enviar-imagem">
+        <label for="nameProduct" class="labels-form">Nome do produto: <input type="text" name="nameProduct" class="inputs" placeholder="Nomde do produto." maxlength="32" required></label>
+        <label for="descriptionProduct" class="labels-form">Descrição do produto: <textarea name="descriptionProduct" required cols="30" rows="10"></textarea></label>
+        <label for="precoProduct" class="labels-form">Preço: <input type="text" name="precoProduct" class="inputs" required placeholder="Digite o apenas preço do produto."></label>
+        <label for="promotionProduct" class="labels-form">Promoção: (preço menor) <input type="text" class="inputs" name="promotionProduct" required placeholder="Digite o apenas preço do produto."></label>
+        <label for="nameVendedor" class="labels-form">Nome do vendedor: <input type="text" name="nameVendedor" class="inputs" placeholder="Digite seu nome." required maxlength="20"></label>
+        <label for="contactVendedor" class="labels-form">Seu número de telefone: <input type="text" class="inputs" placeholder="Digite seu número." name="contactVendedor" required maxlength="20"></label>
+        <label for="linkImageProduct" class="labels-form">Envie o link de sua imagem.<input type="text" class="inputs" name="linkImageProduct" required></label>
+        <button type="submit" class="btn-login">Enviar</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs'); %>

@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs'); %>
+<%- include('partials/nav.ejs'); %>
+<div class="container-cadastro-produtos">
+    <form method="post" class="container-form" action="/atualizar-dados">
+        <label for="nameProductAtt" class="labels-form">Nome do produto: <input type="text" name="nameProductAtt" class="inputs" placeholder="Nome do produto." maxlength="32" required value="<%= produto.nome %> "></label>
+        <label for="descriptionProductAtt" class="labels-form">Descrição do produto: <textarea name="descriptionProductAtt" required cols="30" rows="10"><%= produto.descricao %> </textarea></label>
+        <label for="precoProductAtt" class="labels-form">Preço: <input type="text" name="precoProductAtt" class="inputs" required placeholder="Digite o apenas preço do produto." value="<%= produto.preco %> "></label>
+        <label for="promotionProductAtt" class="labels-form">Promoção: (preço menor) <input type="text" class="inputs" name="promotionProductAtt" required placeholder="Digite o apenas preço do produto." value="<%= produto.promocao %> "></label>
+        <label for="nameVendedorAtt" class="labels-form">Nome do vendedor: <input type="text" name="nameVendedorAtt" class="inputs" placeholder="Digite seu nome." required maxlength="20" value="<%= produto.nomeVendedor %> "></label>
+        <label for="contactVendedorAtt" class="labels-form">Seu número de telefone: <input type="text" class="inputs" placeholder="Digite seu número." name="contactVendedorAtt" required maxlength="20" value="<%= produto.contatoVendedor %> "></label>
+        <label for="linkImageProductAtt" class="labels-form">Envie o link de sua imagem.<input type="text" class="inputs" name="linkImageProductAtt" required value="<%= produto.imagem %>"></label>
+        <input type="hidden" name="inputIdAtt" value="<%= produto.id %> ">
+        <button type="submit" class="btn-login">Atualizar</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs'); %>

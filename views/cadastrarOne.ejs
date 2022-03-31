@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs'); %>
+<%- include('partials/nav.ejs'); %>  
+
+<div class="modal-cadastro-errado">
+        <p>Algo deu errado, confira se você colocou alguma letra em seu ano de nascimento ou se as senhas são iguais</p>
+</div>
+
+<main class="main-container">
+    <form action="/realizarCadastro" method="post" class="container-form">
+        <h2>Faça seu cadastro</h2>
+        <label for="namePlace">Nome: <input type="text" class="inputs-Cadastro" placeholder=" Insira seu nome" id="namePlace" name="namePlace" minlength="4" maxlength="30" required></label>
+        <label for="emailPlace">E-mail: <input type="email" class="inputs-Cadastro" placeholder=" Insira seu e-mail" id="emailPlace" name="emailPlace" required></label>
+        <label for="CPFPlace">CPF: <input type="text" class="inputs-Cadastro" placeholder=" Insira seu CPF" class="cpf" id="CPFPlace" name="cpfPlace" maxlength="14" required></label>
+            <label for="dataPlace">Ano de nascimento: <input type="number" class="inputs-Cadastro" placeholder="Ano" id="dataPlace"name="dataPlace" required></label>
+            <label for="senhaPlace">Senha: <input type="password" class="inputs-Cadastro" id="senhaPlace" name="senhaPlace" placeholder=" Insira sua senha" required minlength="8"></label>
+            <label for="repeatSenhaPlace">Insira novamente sua senha:<input type="password" class="inputs-Cadastro" placeholder="Digite sua senha novamente" name="repeatSenhaPlace" id="repeatSenhaPleace" required minlength="8"></label>
+           <label for=""> <input class="termosDeCondicoes" type="checkbox" required><a class="linkTermos" href="#">Aceito os termos de condições</a></label>
+        <button class="btnProsseguir" type="submit">Prosseguir</button>
+    </form> 
+</main>
+<%- include('partials/footer.ejs'); %>  
